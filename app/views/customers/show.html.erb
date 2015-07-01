@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag @customer.avatar.url(:medium) %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @customer.customer_id %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @customer.occupation %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @customer.birthday %>
+</p>
+
+<p>
+  <strong>Shop domain:</strong>
+  <%= @customer.shop_domain %>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

@@ -23,10 +23,14 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# use shopify_api gem
+# Use shopify_api gem
 gem 'shopify_app'
-# use figaro gem
+# Use figaro gem to store confidentials
 gem 'figaro'
+# Use paperclip gem for avatar
+gem 'paperclip', '~> 4.3'
+# Use aws gem for image hosting
+gem 'aws-sdk', '~> 1.6'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

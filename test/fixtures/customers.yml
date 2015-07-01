@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_id: 1
+  email: MyString
+  occupation: MyString
+  birthday: 2015-06-30 17:15:55
+  shop_domain: MyString
+
+two:
+  customer_id: 1
+  email: MyString
+  occupation: MyString
+  birthday: 2015-06-30 17:15:55
+  shop_domain: MyString

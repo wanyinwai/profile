@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628110921) do
+ActiveRecord::Schema.define(version: 20150701022245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.string   "email"
+    t.string   "occupation"
+    t.datetime "birthday"
+    t.string   "shop_domain"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
 
   create_table "shops", force: :cascade do |t|
     t.string   "shopify_domain", null: false
