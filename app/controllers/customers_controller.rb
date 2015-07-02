@@ -5,20 +5,32 @@ class CustomersController < ApplicationController
   # GET /customers.json
   def index
     @customers = Customer.all
+
+    # ask shopify to render like native liquid page
+    render layout: false, content_type: 'application/liquid'
   end
 
   # GET /customers/1
   # GET /customers/1.json
   def show
+
+    # ask shopify to render like native liquid page
+    render layout: false, content_type: 'application/liquid'
   end
 
   # GET /customers/new
   def new
     @customer = Customer.new
+
+    # ask shopify to render like native liquid page
+    render layout: false, content_type: 'application/liquid'
   end
 
   # GET /customers/1/edit
   def edit
+
+    # ask shopify to render like native liquid page
+    render layout: false, content_type: 'application/liquid'
   end
 
   # POST /customers
@@ -35,6 +47,9 @@ class CustomersController < ApplicationController
         format.json { render json: @customer.errors, status: :unprocessable_entity }
       end
     end
+
+    # ask shopify to render like native liquid page
+    render layout: false, content_type: 'application/liquid'
   end
 
   # PATCH/PUT /customers/1
@@ -49,6 +64,9 @@ class CustomersController < ApplicationController
         format.json { render json: @customer.errors, status: :unprocessable_entity }
       end
     end
+
+    # ask shopify to render like native liquid page
+    render layout: false, content_type: 'application/liquid'
   end
 
   # DELETE /customers/1
