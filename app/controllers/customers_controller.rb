@@ -8,7 +8,7 @@ class CustomersController < ApplicationController
     #customers.find(:customer_id)
 
     # ask shopify to render like native liquid page
-    # render layout: false, content_type: 'application/liquid'
+    render layout: false, content_type: 'application/liquid'
   end
 
   # GET /customers/1
@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
     redirect_to action: "index" 
     
     # ask shopify to render like native liquid page
-    # render layout: false, content_type: 'application/liquid'
+    render layout: false, content_type: 'application/liquid'
   end
 
   # GET /customers/new
