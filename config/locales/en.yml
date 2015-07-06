@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+
+# for submit button
+en:
+  helpers:
+    submit:
+      customer:
+        create: "Create Profile"
+        update: "Update Profile"    

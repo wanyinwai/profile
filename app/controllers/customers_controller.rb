@@ -5,17 +5,19 @@ class CustomersController < ApplicationController
   # GET /customers.json
   def index
     @customers = Customer.all
+    #customers.find(:customer_id)
 
     # ask shopify to render like native liquid page
-    render layout: false, content_type: 'application/liquid'
+    # render layout: false, content_type: 'application/liquid'
   end
 
   # GET /customers/1
   # GET /customers/1.json
   def show
-
+    redirect_to action: "index" 
+    
     # ask shopify to render like native liquid page
-    render layout: false, content_type: 'application/liquid'
+    # render layout: false, content_type: 'application/liquid'
   end
 
   # GET /customers/new
@@ -23,14 +25,14 @@ class CustomersController < ApplicationController
     @customer = Customer.new
 
     # ask shopify to render like native liquid page
-    render layout: false, content_type: 'application/liquid'
+    # render layout: false, content_type: 'application/liquid'
   end
 
   # GET /customers/1/edit
   def edit
 
     # ask shopify to render like native liquid page
-    render layout: false, content_type: 'application/liquid'
+    # render layout: false, content_type: 'application/liquid'
   end
 
   # POST /customers
@@ -49,7 +51,7 @@ class CustomersController < ApplicationController
     end
 
     # ask shopify to render like native liquid page
-    render layout: false, content_type: 'application/liquid'
+    # render layout: false, content_type: 'application/liquid'
   end
 
   # PATCH/PUT /customers/1
@@ -66,7 +68,7 @@ class CustomersController < ApplicationController
     end
 
     # ask shopify to render like native liquid page
-    render layout: false, content_type: 'application/liquid'
+    # render layout: false, content_type: 'application/liquid'
   end
 
   # DELETE /customers/1

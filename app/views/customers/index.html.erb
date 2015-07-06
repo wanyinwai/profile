@@ -1,8 +1,44 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
-<h1>Listing Customers</h1>
+<!-- <h1>Profile</h1> -->
 
-<table>
+<div class="row">
+  <!--customers.find-->
+  <% @customers.each do |customer| %>
+    <div class="col-xs-6">
+      <div class="thumbnail">
+        <%= image_tag customer.avatar.url(:medium) %>
+      </div>
+    </div>
+    <div class="col-xs-8">
+      <p>
+        <strong>Occupation:</strong>
+        <%= customer.occupation %>
+      </p>
+
+      <p>
+        <strong>Birthday:</strong>
+        <%= customer.birthday.strftime("%e %B %Y") %>
+      </p>
+
+      <!-- hidden field -->
+      <!-- <p>
+        <strong>Customer:</strong>
+        <%= customer.customer_id %>
+      </p> -->
+
+      <!-- <p>
+        <strong>Email:</strong>
+        <%= customer.email %>
+      </p> -->
+
+      <%= link_to 'Edit', edit_customer_path(customer) %>
+    </div>
+  <% end %>
+</div>
+
+
+<!-- <table>
   <thead>
     <tr>
       <th>Profile Picture</th>
@@ -32,6 +68,6 @@
   </tbody>
 </table>
 
-<br>
+<br> 
 
-<%= link_to 'New Customer', new_customer_path %>
+<%= link_to 'New Customer', new_customer_path %> -->
