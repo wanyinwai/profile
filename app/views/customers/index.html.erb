@@ -1,10 +1,3 @@
-<div id="customer_id">
-  <%= @shopify_customer_id %>
-  {{ customer.id }}
- 
-  <div id="{{ customer.email }}"></div>
-</div>
-
 <div id="profile_btn">
   <%= link_to 'Create Profile', new_customer_path, class: "btn btn-primary" %>
 </div>
@@ -45,3 +38,5 @@
   <% end %>
 </div>
 
+<div id="cust_email" style="display: none;">{{ customer.email }}</div>
+<div id="cust_id" style="display: none;">{{ customer.id }}</div>
