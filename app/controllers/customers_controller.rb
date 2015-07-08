@@ -7,6 +7,9 @@ class CustomersController < ApplicationController
     @customers = Customer.all
     #customers.find(:customer_id)
 
+    # get shopify customer id
+    @shopify_customer_id = session[:customer_id]
+
     # ask shopify to render like native liquid page
     render layout: false, content_type: 'application/liquid'
   end

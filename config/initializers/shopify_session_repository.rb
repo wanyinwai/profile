@@ -2,7 +2,7 @@
 class Shop < ActiveRecord::Base
   def self.store(session)
   	shop = Shop.find_or_initialize_by(shopify_domain: session.url)
-	shop.shopify_token = session.token
+	  shop.shopify_token = session.token
     #shop = self.new(domain: session.url, token: session.token)
     shop.save!
     shop.id

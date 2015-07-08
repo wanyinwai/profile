@@ -1,6 +1,10 @@
-<!--<p id="notice"><%= notice %></p>-->
+<div id="customer id">
+  <%= @shopify_customer_id %>
+</div>
 
-<!-- <h1>Profile</h1> -->
+<div id="profile_btn">
+  <%= link_to 'Create Profile', new_customer_path, class: "btn btn-primary" %>
+</div>
 
 <div class="row">
   <!--customers.find-->
@@ -32,9 +36,9 @@
         <%= customer.email %>
       </p> -->
 
-      <%= link_to 'Edit', edit_customer_path(customer) %>
+      <%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-primary" %>
+      <%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
-
 
