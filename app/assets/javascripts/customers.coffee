@@ -4,10 +4,12 @@
 
 ready = ->
   # get customer email and id on page load
-  cust_email = document.getElementById('cust_email').innerHTML
-  cust_id = document.getElementById('cust_id').innerHTML
-  alert cust_email + ' ' + cust_id
-  alert 'coffee script'
+  cust_email_elem = document.getElementById('cust_email')
+  cust_email = cust_elem.innerHTML
+  cust_id_elem = document.getElementById('cust_id')
+  cust_id = cust_elem.innerHTML
+
+  console.log
   return
 
 $(document).ready(ready)
