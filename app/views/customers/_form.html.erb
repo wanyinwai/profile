@@ -19,7 +19,7 @@
     <%= f.label :occupation %><br>
     <%= f.text_field :occupation, class: "form-control", input_html: {:autofocus => true}, :required => true %>
   </div>
-  <div class="">
+  <div>
     <%= f.label :birthday %><br>
     <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => Date.current.year-80%>
   </div>
