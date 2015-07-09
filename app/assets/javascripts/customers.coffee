@@ -10,6 +10,14 @@ ready = ->
   cust_id = cust_id_elem.innerHTML
 
   console.log cust_email+" "+cust_id 
+  console.log "Hello"
+
+  cust_email_2 = document.getElementById('cust_email').innerHTML
+  cust_id_2 = document.getElementById('cust_id').innerHTML
+
+  console.log cust_email_2
+  console.log cust_id_2
+
   return
 
 $(document).ready(ready)
