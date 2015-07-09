@@ -7,6 +7,7 @@ ready = ->
   cust_email = document.getElementById('cust_email').innerHTML
   cust_id = document.getElementById('cust_id').innerHTML
   alert cust_email + ' ' + cust_id
+  alert ("coffee script")
   return
 
 $(document).ready(ready)
