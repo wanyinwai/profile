@@ -5,12 +5,11 @@
 ready = ->
   # get customer email and id on page load
   cust_email_elem = document.getElementById('cust_email')
-  cust_email = cust_elem.innerHTML
+  cust_email = cust_email_elem.innerHTML
   cust_id_elem = document.getElementById('cust_id')
-  cust_id = cust_elem.innerHTML
+  cust_id = cust_id_elem.innerHTML
 
-  console.log
+  console.log cust_email+" "+cust_id 
   return
 
 $(document).ready(ready)
-$(document).on('page:load', ready)
