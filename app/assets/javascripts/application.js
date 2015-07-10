@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-alert("app js");
+function getReady(){
+	console.log("application.js");
+}

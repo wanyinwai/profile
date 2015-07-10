@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-get_ready = ->
+@get_ready = () ->
   # get customer email and id on page load
   alert('hello alert')
 
@@ -15,5 +15,5 @@ get_ready = ->
 
   return
 
-$(document).ready(get_ready)
-$(document).on('page:load', get_ready)
+$(document).ready(@get_ready)
+$(document).on('page:load', @get_ready)
