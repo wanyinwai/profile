@@ -17,3 +17,17 @@
 
 $(document).ready(@get_ready)
 $(document).on('page:load', @get_ready)
+
+
+@execute = () ->
+  $.ajax
+  url: '/userinfo'
+  type: 'POST'
+  beforeSend: (xhr) ->
+    xhr.setRequestHeader 'X-CSRF-Token', $('meta[name="csrf-token"]').attr('content')
+    return
+  data: 'someData=' + "helloworld"
+  success: (response) ->
+    $('#someDiv').html response
+    return
+
