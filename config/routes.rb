@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  post '/userinfo' => 'customers#generateqrcode'
+
   resources :customers
   controller :sessions do
     get 'login' => :new, :as => :login
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
 
   root :to => 'home#index'
   
-  post '/userinfo' => 'customers#generateqrcode'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

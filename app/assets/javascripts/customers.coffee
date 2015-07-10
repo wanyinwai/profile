@@ -12,8 +12,10 @@
     return
   data: 'someData=' + "helloworld"
   success: (response) ->
-    $('#someDiv').html response
-  
+    // $('#someDiv').html response
+    alert "success"
+  error: (jqXHR, textStatus, errorThrown) ->
+    alert "=>#{errorThrown}"
   return
 
 # @get_ready = () ->
