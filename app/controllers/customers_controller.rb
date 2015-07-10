@@ -10,6 +10,8 @@ class CustomersController < ApplicationController
     # get shopify customer id
     # @shopify_customer_id = session[:customer_id]
 
+    # ShopifyAPI::ScriptTag.create(:event => "onload", :src => "http://customer-profile.herokuapp.com/assets/#{ActionController::Base.helpers.asset_path('application.js')}")
+
     # ask shopify to render like native liquid page
     render content_type: 'application/liquid'
   end
