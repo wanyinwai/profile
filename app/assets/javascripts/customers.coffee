@@ -7,9 +7,9 @@
   $.ajax
   url: '/userinfo'
   type: 'POST'
-  beforeSend: (xhr) ->
-    xhr.setRequestHeader 'X-CSRF-Token', $('meta[name="csrf-token"]').attr('content')
-    return
+  # beforeSend: (xhr) ->
+  #   xhr.setRequestHeader 'X-CSRF-Token', $('meta[name="csrf-token"]').attr('content')
+  #   return
   data: 'someData=' + "helloworld"
   success: (response) ->
     // $('#someDiv').html response
