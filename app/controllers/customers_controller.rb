@@ -87,8 +87,9 @@ class CustomersController < ApplicationController
   end
 
   def generateqrcode
-    params[:someData]
-    puts "-------kjhjhhihiuhihihiuhuihiuhi------------>#{params[:someData]}"
+    puts params[:someData]
+
+    logger.info "-------kjhjhhihiuhihihiuhuihiuhi------------>#{params[:someData]}"
   end
 
   private
