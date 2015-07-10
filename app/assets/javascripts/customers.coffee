@@ -7,6 +7,7 @@
   $.ajax
   url: '/userinfo'
   type: 'POST'
+  headers: 'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
   data: 'someData=' + "helloworld"
   success: (response) ->
     alert "success"
