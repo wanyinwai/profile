@@ -5,15 +5,14 @@
 
 @printHello = () ->
   $.ajax
-    url: '/userinfo'
-    type: 'POST'
-    data: 'someData=' + "helloworld"
-    success: (response) ->
-      // $('#someDiv').html response
-      alert "success"
-    error: (jqXHR, textStatus, errorThrown) ->
-      alert "=>#{errorThrown}"
-    return
+  url: '/userinfo'
+  type: 'POST'
+  data: 'someData=' + "helloworld"
+  success: (response) ->
+    alert "success"
+  error: (jqXHR, textStatus, errorThrown) ->
+    alert "=>#{errorThrown}"
+  return
 
 # @get_ready = () ->
 #   # get customer email and id on page load
