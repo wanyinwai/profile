@@ -2,34 +2,38 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-
-@printHello = () ->
+@passUserInfo = () ->
   $.ajax
-  url: '/userinfo'
+  url: 'userinfo'
   type: 'POST'
-  headers: 'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
-  data: 'someData=' + "helloworld"
+  headers: {
+        'X-Transaction': 'POST userinfo',
+        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
+  data: 'customer_email=' + "helloworld"
   success: (response) ->
     alert "success"
-  error: (jqXHR, textStatus, errorThrown) ->
-    alert "=>#{errorThrown}"
+  error: ->
+    alert "error"
   return
 
-# @get_ready = () ->
-#   # get customer email and id on page load
-#   alert('hello alert')
+@getUserInfo = () ->
+  # get customer email and id on page load
+  alert('hello alert')
 
-#   cust_email_2 = document.getElementById('cust_email').innerHTML
-#   cust_id_2 = document.getElementById('cust_id').innerHTML
+  customer_email = document.getElementById('cust_email').innerHTML
+  customer_id = document.getElementById('cust_id').innerHTML
 
-#   console.log cust_email_2
-#   console.log cust_id_2
-#   console.log "hello"
+  console.log customer_email
+  console.log customer_id
+  
 
-#   return
+  console.log "hello"
 
-# $(document).ready(@get_ready)
-# $(document).on('page:load', @get_ready)
+  return
+
+$(document).ready(@getUserInfo)
+$(document).on('page:load', @getUserInfo)
 
 
 

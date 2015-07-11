@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="col-xs-8">
-      <p>
+      <!-- <p>
         <strong>Occupation:</strong>
         <%= customer.occupation %>
       </p>
@@ -19,7 +19,7 @@
       <p>
         <strong>Birthday:</strong>
         <%= customer.birthday.strftime("%e %B %Y") %>
-      </p>
+      </p> -->
 
       <!-- hidden field -->
       <!-- <p>
@@ -38,8 +38,19 @@
   <% end %>
 </div>
 
+<div id="member_qrcode"> 
+  <p>
+    <strong>Membership:</strong>
+    <p><%= image_tag @qr %></p>
+  </p>
+<div>
+
 <div id="cust_email" style="display: none;">{{ customer.email }}</div>
 <div id="cust_id" style="display: none;">{{ customer.id }}</div>
 
-<button type="button" onclick="get_ready()">Js Test</button>
-<button type="button" onclick="printHello()">Js Test 2</button>
+<button type="button" onclick="getUserInfo()">Js Test</button>
+<button type="button" onclick="passUserInfo()">Js Test 2</button>
+
+
+
+  

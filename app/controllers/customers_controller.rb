@@ -1,5 +1,20 @@
 class CustomersController < ApplicationController
+  require 'rqrcode_png'      
+
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
+
+  # generate qrcode using users email
+  def generateqrcode
+    puts "inside generator"
+
+    @email = "wanyw92@gmail.com"
+    @qr = RQRCode::QRCode.new(@email).to_img.resize(200, 200).to_data_url
+
+    # receive variable from ajax callback  
+    #puts params[:someData]
+    #logger.info "-------kjhjhhihiuhihihiuhuihiuhi------------>#{params[:someData]}"
+
+  end
 
   # GET /customers
   # GET /customers.json
@@ -7,10 +22,11 @@ class CustomersController < ApplicationController
     @customers = Customer.all
     #customers.find(:customer_id)
 
-    # get shopify customer id
-    # @shopify_customer_id = session[:customer_id]
-
-    # ShopifyAPI::ScriptTag.create(:event => "onload", :src => "http://customer-profile.herokuapp.com/assets/#{ActionController::Base.helpers.asset_path('application.js')}")
+    #puts params[:customer_email]
+    @email = "geoffreyleow@gmail.com"
+    if @email != ""
+      @qr = RQRCode::QRCode.new(@email).to_img.resize(250, 250).to_data_url
+    end
 
     # ask shopify to render like native liquid page
     render content_type: 'application/liquid'
@@ -84,12 +100,6 @@ class CustomersController < ApplicationController
       format.html { redirect_to customers_url, notice: 'Customer was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def generateqrcode
-    puts params[:someData]
-
-    logger.info "-------kjhjhhihiuhihihiuhuihiuhi------------>#{params[:someData]}"
   end
 
   private

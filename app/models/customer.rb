@@ -9,10 +9,11 @@ class Customer < ActiveRecord::Base
 	# paperclip upload setting
 	has_attached_file :avatar,
 	                :styles => { :medium => "300x300>", :thumb => "100x100>" },
-	                :default_url => "/images/:style/missing.png",
-	                :storage => :s3,
-	                :path => "/profile-custom",
-	                :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
+	                :default_url => "/images/:style/missing.png"
+	                #,
+	                #:storage => :s3,
+	                #:path => "/profile-custom",
+	                #:s3_credentials => Proc.new{|a| a.instance.s3_credentials }
 
 	validates_attachment  :avatar,
 	                    :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] },

@@ -33,6 +33,8 @@ gem 'figaro'
 gem 'paperclip', '~> 4.3'
 # Use aws gem for image hosting
 gem 'aws-sdk', '~> 1.6'
+# Use rqrcode_png gem to generate qr code
+gem 'rqrcode_png'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

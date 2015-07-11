@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  post '/userinfo' => 'customers#generateqrcode'
+  post '/userinfo' => 'customers#index'
 
   resources :customers
   controller :sessions do
