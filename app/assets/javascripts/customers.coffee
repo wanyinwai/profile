@@ -10,7 +10,7 @@
         'X-Transaction': 'POST userinfo',
         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
         },
-  data: 'customer_email=' + "helloworld"
+  data: 'customer_email':'customer email'
   success: (response) ->
     alert "success"
   error: ->
