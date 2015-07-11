@@ -22,7 +22,9 @@ class CustomersController < ApplicationController
     @customers = Customer.all
     #customers.find(:customer_id)
 
-    #puts params[:customer_email]
+    puts params[:customer_email]
+    logger.info "-------kjhjhhihiuhihihiuhuihiuhi------------>#{params[:customer_email]}"
+    
     @email = "geoffreyleow@gmail.com"
     if @email != ""
       @qr = RQRCode::QRCode.new(@email).to_img.resize(250, 250).to_data_url
