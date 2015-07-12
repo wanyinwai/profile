@@ -1,5 +1,4 @@
 require 'rqrcode_png'
-headers['Access-Control-Allow-Origin'] = '*'
 
 class CustomersController < ApplicationController
 
