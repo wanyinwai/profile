@@ -36,9 +36,7 @@
   customer_email = customer_email_html
   #customer_id = 12345678
   $.ajax
-    #url: '/userinfo'
-    #http://toysinvest.com/
-    url: 'http://toysinvest.com/userinfo'
+    url: 'http://customer-profile.herokuapp.com/userinfo'
     type: 'POST'
     data: 'customer_email='+customer_email
     headers: {
