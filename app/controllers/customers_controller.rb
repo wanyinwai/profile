@@ -1,5 +1,6 @@
+require 'rqrcode_png'
+
 class CustomersController < ApplicationController
-  require 'rqrcode_png'
 
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
@@ -7,6 +8,7 @@ class CustomersController < ApplicationController
   def userinfo
     puts "reached userinfo"
     puts params[:customer_email]
+    puts params[:customer_id]
 
     # generate qrcode using users email
     @email = params[:customer_email]

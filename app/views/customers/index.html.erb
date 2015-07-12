@@ -37,18 +37,12 @@
     </div>
   <% end %>
 </div>
-
-<div id="member_qrcode">
-  <p>
-    <strong>Membership:</strong>
-    <!-- <p><%= image_tag @qr %></p> -->
-    <p id="qr_ptag"><img id="qr_img" ></img></p>
-  </p>
-<div>
+<p>
+  <button type="button" onclick="displayMembership()" class="btn btn-primary">Display Membership Code</button>
+</p>
+<div id="member_qrcode"><div>
 
 <div id="cust_email" style="display: none;">{{ customer.email }}</div>
 <div id="cust_id" style="display: none;">{{ customer.id }}</div>
 
-<button type="button" onclick="getUserInfo()">Js Test</button>
-<button type="button" onclick="passUserInfo()">Js Test 2</button>
-<button type="button" onclick="pass()">Js Test 2</button>
+<!-- <button type="button" onclick="getUserInfo()">Js Test</button> -->
