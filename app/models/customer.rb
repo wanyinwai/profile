@@ -1,19 +1,16 @@
 class Customer < ActiveRecord::Base
-	# define s3 credentials
-	def s3_credentials
-    	{:bucket => ENV['AWS_BUCKET'],
-    	 :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-    	 :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']}
-  end
-
 	# paperclip upload setting
 	has_attached_file :avatar,
-	                :styles => { :medium => "300x300>", :thumb => "100x100>" },
-	                :default_url => "/images/:style/missing.png"
-	                #,
+	                :styles => { :medium => "300x300>", :thumb => "100x100>" }
 	                #:storage => :s3,
-	                #:path => "/profile-custom",
-	                #:s3_credentials => Proc.new{|a| a.instance.s3_credentials }
+	                #:path => "/profilecustom/:id/:style/:filename.:extension",
+	                #:s3_credentials => {
+	                # :bucket => ENV['AWS_BUCKET'],	
+	                # :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+	                # :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']	
+	            	#}
+
+	                #:default_url => "/images/:style/missing.png"
 
 	validates_attachment  :avatar,
 	                    :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] },

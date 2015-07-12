@@ -1,37 +1,47 @@
 class CustomersController < ApplicationController
-  require 'rqrcode_png'      
+  require 'rqrcode_png'
 
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
-  # generate qrcode using users email
-  def generateqrcode
-    puts "inside generator"
+  # get user info from ajax
+  def userinfo
+    puts "reached userinfo"
+    puts params[:customer_email]
 
-    @email = "wanyw92@gmail.com"
-    @qr = RQRCode::QRCode.new(@email).to_img.resize(200, 200).to_data_url
+    # generate qrcode using users email
+    @email = params[:customer_email]
+    @qr = RQRCode::QRCode.new(@email).to_img.resize(250, 250).to_data_url
 
-    # receive variable from ajax callback  
-    #puts params[:someData]
-    #logger.info "-------kjhjhhihiuhihihiuhuihiuhi------------>#{params[:someData]}"
-
+    # return QRimage to json to render to view
+    render :json => {'customer_email_result' => @qr}
   end
 
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.all
-    #customers.find(:customer_id)
 
-    puts params[:customer_email]
-    logger.info "-------kjhjhhihiuhihihiuhuihiuhi------------>#{params[:customer_email]}"
-    
-    @email = "geoffreyleow@gmail.com"
-    if @email != ""
-      @qr = RQRCode::QRCode.new(@email).to_img.resize(250, 250).to_data_url
-    end
+    # puts "reached here at indexxx"
+    @customers = Customer.all
+    # #customers.find(:customer_id)
+    #
+    # #logger.info "-------kjhjhhihiuhihihiuhuihiuhi------------>#{params[:customer_email]}"
+    #
+    # if params[:customer_email] != nil
+    #   puts "not nil"
+    #   puts params[:customer_email]
+    #   #render :json => {'customer_email_result' => "data passed"}
+    # else
+    #   puts "nils"
+    #   #render :json => {'customer_email_result' => "data x passed"}
+    # end
+    #
+    # @email = "geoffreyleow@gmail.com"
+    # if @email != ""
+    #   @qr = RQRCode::QRCode.new(@email).to_img.resize(250, 250).to_data_url
+    # end
 
     # ask shopify to render like native liquid page
-    render content_type: 'application/liquid'
+    # render content_type: 'application/liquid'
   end
 
   # GET /customers/1
@@ -40,7 +50,7 @@ class CustomersController < ApplicationController
     redirect_to action: "index"
 
     # ask shopify to render like native liquid page
-    render content_type: 'application/liquid'
+    # render content_type: 'application/liquid'
   end
 
   # GET /customers/new
@@ -48,14 +58,14 @@ class CustomersController < ApplicationController
     @customer = Customer.new
 
     # ask shopify to render like native liquid page
-    render content_type: 'application/liquid'
+    # render content_type: 'application/liquid'
   end
 
   # GET /customers/1/edit
   def edit
 
     # ask shopify to render like native liquid page
-    render content_type: 'application/liquid'
+    # render content_type: 'application/liquid'
   end
 
   # POST /customers
@@ -74,7 +84,7 @@ class CustomersController < ApplicationController
     end
 
     # ask shopify to render like native liquid page
-    render content_type: 'application/liquid'
+    # render content_type: 'application/liquid'
   end
 
   # PATCH/PUT /customers/1
@@ -91,7 +101,7 @@ class CustomersController < ApplicationController
     end
 
     # ask shopify to render like native liquid page
-    render content_type: 'application/liquid'
+    # render content_type: 'application/liquid'
   end
 
   # DELETE /customers/1

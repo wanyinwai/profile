@@ -38,10 +38,11 @@
   <% end %>
 </div>
 
-<div id="member_qrcode"> 
+<div id="member_qrcode">
   <p>
     <strong>Membership:</strong>
-    <p><%= image_tag @qr %></p>
+    <!-- <p><%= image_tag @qr %></p> -->
+    <p id="qr_ptag"><img id="qr_img" ></img></p>
   </p>
 <div>
 
@@ -50,7 +51,4 @@
 
 <button type="button" onclick="getUserInfo()">Js Test</button>
 <button type="button" onclick="passUserInfo()">Js Test 2</button>
-
-
-
-  
+<button type="button" onclick="pass()">Js Test 2</button>

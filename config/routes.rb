@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  
-  post '/userinfo' => 'customers#index'
+
+  post '/userinfo' => 'customers#userinfo'
 
   resources :customers
+
   controller :sessions do
     get 'login' => :new, :as => :login
     post 'login' => :create, :as => :authenticate
@@ -11,8 +12,8 @@ Rails.application.routes.draw do
   end
 
   root :to => 'home#index'
-  
-  
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -36,6 +36,9 @@ gem 'aws-sdk', '~> 1.6'
 # Use rqrcode_png gem to generate qr code
 gem 'rqrcode_png'
 
+# Use rubyrace gem to solve Execjs issue
+gem 'therubyracer'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
