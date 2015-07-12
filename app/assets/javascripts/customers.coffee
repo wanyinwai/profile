@@ -42,6 +42,7 @@
     headers: {
         'X-Transaction': 'POST userinfo',
         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        'Access-Control-Allow-Origin': '*'  
     }
     success: (data) ->
       console.log "Successfully passed data in ajax."
