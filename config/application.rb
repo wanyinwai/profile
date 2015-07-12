@@ -11,10 +11,6 @@ module Profile
     config.action_dispatch.default_headers['P3P'] = 'CP="Not used"'
     config.action_dispatch.default_headers.delete('X-Frame-Options')
 
-    config.action_dispatch.default_headers.merge!({
-      'Access-Control-Allow-Origin' => '*',
-      'Access-Control-Request-Method' => '*'
-    })
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
