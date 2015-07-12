@@ -8,7 +8,7 @@ class CustomersController < ApplicationController
   def userinfo
     puts "reached userinfo"
     puts params[:customer_email]
-    puts params[:customer_id]
+    #puts params[:customer_id]
 
     # generate qrcode using users email
     @email = params[:customer_email]
@@ -23,8 +23,12 @@ class CustomersController < ApplicationController
   def index
 
     # puts "reached here at indexxx"
+
     @customers = Customer.all
     # #customers.find(:customer_id)
+
+
+
     #
     # #logger.info "-------kjhjhhihiuhihihiuhuihiuhi------------>#{params[:customer_email]}"
     #
@@ -43,7 +47,7 @@ class CustomersController < ApplicationController
     # end
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # GET /customers/1
@@ -52,7 +56,7 @@ class CustomersController < ApplicationController
     redirect_to action: "index"
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # GET /customers/new
@@ -60,14 +64,14 @@ class CustomersController < ApplicationController
     @customer = Customer.new
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # GET /customers/1/edit
   def edit
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # POST /customers
@@ -86,7 +90,7 @@ class CustomersController < ApplicationController
     end
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # PATCH/PUT /customers/1
@@ -103,7 +107,7 @@ class CustomersController < ApplicationController
     end
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # DELETE /customers/1

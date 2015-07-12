@@ -29,15 +29,16 @@
 
 @displayMembership = () ->
 
-  # customer_email = document.getElementById('cust_email').innerHTML
+  customer_email_html = document.getElementById('cust_email').innerHTML
   # customer_id = document.getElementById('cust_id').innerHTML
 
   console.log "it did reach pass()"
-  customer_email = "geoffreyleow@gmail.com"
+  customer_email = customer_email_html
   #customer_id = 12345678
   $.ajax
     #url: '/userinfo'
-    url: 'https://localhost:3001/userinfo'
+    #http://toysinvest.com/
+    url: 'http://toysinvest.com/userinfo'
     type: 'POST'
     data: 'customer_email='+customer_email
     headers: {
