@@ -1,7 +1,7 @@
 require 'rqrcode_png'
 
 class CustomersController < ApplicationController
-  #skip_before_filter :verify_authenticity_token
+  skip_before_filter :verify_authenticity_token
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   # get user info from ajax
