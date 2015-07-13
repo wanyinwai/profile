@@ -38,6 +38,8 @@ gem 'rqrcode_png'
 
 # Use rubyrace gem to solve Execjs issue
 gem 'therubyracer'
+# use rack cors to solve access control allow origin
+gem 'rack-cors' 
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -126,6 +126,7 @@ GEM
       mimemagic (= 0.3.0)
     pg (0.18.2)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.2)
@@ -223,6 +224,7 @@ DEPENDENCIES
   jquery-rails
   paperclip (~> 4.3)
   pg
+  rack-cors
   rails (= 4.2.2)
   rails_12factor
   rqrcode_png
