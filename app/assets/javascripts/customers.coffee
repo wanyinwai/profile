@@ -29,18 +29,22 @@
 
 @displayMembership = () ->
 
-  customer_email_html = document.getElementById('cust_email').innerHTML
-  customer_id = document.getElementById('cust_id').innerHTML
+  #customer_email_html = document.getElementById('cust_email').innerHTML
+  #customer_id_html = document.getElementById('cust_id').innerHTML
 
-  console.log "it did reach pass()"
-  console.log $('meta[name="csrf-token"]').attr('content')
+  console.log "reach displayMembership()"
+
+  customer_email_html = "geoffrey@gurlstudio.com"
+  customer_id_html = 1234567888
 
   customer_email = customer_email_html
-  #customer_id = 12345678
+  customer_id = customer_id_html
+
+  # url: 'http://customer-profile.herokuapp.com/userinfo'
   $.ajax
-    url: 'http://customer-profile.herokuapp.com/userinfo'
+    url: 'https://localhost:3001/userinfo'
     type: 'POST'
-    data: 'customer_email='+customer_email
+    data: 'customer_email='+customer_email+'&customer_id='+customer_id
     headers: {
         'X-Transaction': 'POST userinfo',
         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
@@ -57,24 +61,3 @@
       console.log "Ajax thrown an error."
       return
   console.log "it did reach here 2"
-
-
-# @getUserInfo = () ->
-#   # get customer email and id on page load
-#   alert('getUserInfo')
-#
-#   customer_email = "geoffreyleow@gmail.com"
-#   customer_id = 12345678
-#
-#   # customer_email = document.getElementById('cust_email').innerHTML
-#   # customer_id = document.getElementById('cust_id').innerHTML
-#
-#   console.log customer_email
-#   console.log customer_id
-#
-#   @passUserInfo(customer_email, customer_id)
-#
-#   return
-#
-# $(document).ready(@pass())
-# #$(document).on('page:load', @getUserInfo)
