@@ -3,8 +3,9 @@ class Customer < ActiveRecord::Base
 	has_attached_file :avatar,
 	                :styles => { :medium => "300x300>", :thumb => "100x100>" },
 									:storage => :s3,
-									:path => "/profilecustom/:id/:style/:filename.:extension",
+									:path => "/profilecustom/:id/:style/:filename",
 									:bucket => ENV['AWS_BUCKET'],
+									:s3_endpoint => 's3-ap-southeast-1.amazonaws.com'
 	                :s3_credentials => {
 	                  :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
 	                  :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
