@@ -30,9 +30,11 @@
 @displayMembership = () ->
 
   customer_email_html = document.getElementById('cust_email').innerHTML
-  # customer_id = document.getElementById('cust_id').innerHTML
+  customer_id = document.getElementById('cust_id').innerHTML
 
   console.log "it did reach pass()"
+  console.log $('meta[name="csrf-token"]').attr('content')
+
   customer_email = customer_email_html
   #customer_id = 12345678
   $.ajax
