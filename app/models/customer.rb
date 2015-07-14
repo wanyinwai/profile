@@ -3,7 +3,7 @@ class Customer < ActiveRecord::Base
 	has_attached_file :avatar,
 	                :styles => { :medium => "300x300>", :thumb => "100x100>" },
 									:storage => :s3,
-									:default_url => "default.png",
+									:default_url => asset_path("default.png"),
 									:path => "profilecustom/:id/:style/:filename",
 									:bucket => ENV['AWS_BUCKET'],
 									:s3_host_name => "s3-ap-southeast-1.amazonaws.com",
