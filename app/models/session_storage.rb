@@ -11,10 +11,6 @@ class SessionStorage
     shop = Shop.find(id)
     ShopifyAPI::Session.new(shop.shopify_domain, shop.shopify_token)
 
-    # ShopifyAPI::Base.activate_session(ShopifyAPI::Session.new(shop.shopify_domain, shop.shopify_token))
-    # scriptTag = ShopifyAPI::ScriptTag.create(:event => "onload", :src => "http://customer-profile.herokuapp.com/assets/#{ActionController::Base.helpers.asset_path('application.js')}")
-    # scriptTag.save
-
   rescue ActiveRecord::RecordNotFound
     nil
   end
