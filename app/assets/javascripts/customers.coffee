@@ -61,3 +61,5 @@
       console.log "Ajax thrown an error."
       return
   console.log "it did reach here 2"
+
+$(document).ready(@displayMembership())
