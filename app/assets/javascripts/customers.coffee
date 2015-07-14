@@ -62,4 +62,5 @@
       return
   console.log "it did reach here 2"
 
-$(document).ready(@displayMembership())
+$(document).ready(@displayMembership)
+$(document).on('page:load', @displayMembership)
