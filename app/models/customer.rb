@@ -1,9 +1,9 @@
 class Customer < ActiveRecord::Base
 	# paperclip upload setting
 	has_attached_file :avatar,
-	                :styles => { :medium => "300x300>" },
+	                :styles => { :medium => "300x300>", :thumb => "100x100>" },
 									:storage => :s3,
-									:path => "/profilecustom/:id/:style/:filename",
+									:path => "profilecustom/:id/:style/:filename",
 									:bucket => ENV['AWS_BUCKET'],
 									:s3_host_name => "s3-ap-southeast-1.amazonaws.com",
 	                :s3_credentials => {
