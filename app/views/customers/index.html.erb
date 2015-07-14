@@ -1,49 +1,13 @@
 <!-- <div id="profile_btn">
   <%= link_to 'Create Profile', new_customer_path, class: "btn btn-primary" %>
 </div> -->
-
-<div class="row">
-  <!--customers.find-->
-  <% @customers.each do |customer| %>
-    <div class="col-xs-6">
-      <div class="thumbnail">
-        <%= image_tag customer.avatar.url(:medium) %>
-      </div>
-    </div>
-    <div class="col-xs-8">
-      <!-- <p>
-        <strong>Occupation:</strong>
-        <%= customer.occupation %>
-      </p>
-
-      <p>
-        <strong>Birthday:</strong>
-        <%= customer.birthday.strftime("%e %B %Y") %>
-      </p> -->
-
-      <!-- hidden field -->
-      <!-- <p>
-        <strong>Customer:</strong>
-        <%= customer.customer_id %>
-      </p> -->
-
-      <!-- <p>
-        <strong>Email:</strong>
-        <%= customer.email %>
-      </p> -->
-
-      <%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-primary" %>
-      <%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
-    </div>
-  <% end %>
-</div>
+<h1> Profile </h1>
 
 <p>
   <button type="button" onclick="displayMembership()" class="btn btn-primary">Display Membership Code</button>
 </p>
+<!-- <button type="button" onclick="displayCurrentMember()" class="btn btn-primary">Find Customer By Id</button> -->
 <div id="member_qrcode"></div>
 
 <div id="cust_email" style="display: none;">{{ customer.email }}</div>
 <div id="cust_id" style="display: none;">{{ customer.id }}</div>
-
-<!-- <button type="button" onclick="getUserInfo()">Js Test</button> -->

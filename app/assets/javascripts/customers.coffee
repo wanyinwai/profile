@@ -29,13 +29,13 @@
 
 @displayMembership = () ->
 
-  #customer_email_html = document.getElementById('cust_email').innerHTML
-  #customer_id_html = document.getElementById('cust_id').innerHTML
+  customer_email_html = document.getElementById('cust_email').innerHTML
+  customer_id_html = document.getElementById('cust_id').innerHTML
 
   console.log "reach displayMembership()"
 
-  customer_email_html = "geoffrey@gurlstudio.com"
-  customer_id_html = 1234567888
+  # customer_email_html = "geoffrey@gurlstudio.com"
+  # customer_id_html = 1234567888
 
   customer_email = customer_email_html
   customer_id = customer_id_html

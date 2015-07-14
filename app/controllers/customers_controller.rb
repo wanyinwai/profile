@@ -15,39 +15,28 @@ class CustomersController < ApplicationController
     @qr = RQRCode::QRCode.new(@email).to_img.resize(250, 250).to_data_url
 
     # return QRimage to json to render to view
-    # render :json => {'customer_email_result' => @qr}
+    render :json => {'customer_email_result' => @qr}
   end
 
   # GET /customers
   # GET /customers.json
   def index
 
-    # puts "reached here at indexxx"
+    # pass email variable here
+    # puts "reach index"
+    # puts params[:customer_email]
+    # puts params[:customer_id]
+    #
+    # if Customer.where(:email => params[:customer_email].blank?
+    #   @customers = Customer.create(:email => params[:customer_email])
+    # end
+    #
+    # @customers = Customer.find_by(email: @customers.email)
 
     @customers = Customer.all
-    # #customers.find(:customer_id)
-
-
-
-    #
-    # #logger.info "-------kjhjhhihiuhihihiuhuihiuhi------------>#{params[:customer_email]}"
-    #
-    # if params[:customer_email] != nil
-    #   puts "not nil"
-    #   puts params[:customer_email]
-    #   #render :json => {'customer_email_result' => "data passed"}
-    # else
-    #   puts "nils"
-    #   #render :json => {'customer_email_result' => "data x passed"}
-    # end
-    #
-    # @email = "geoffreyleow@gmail.com"
-    # if @email != ""
-    #   @qr = RQRCode::QRCode.new(@email).to_img.resize(250, 250).to_data_url
-    # end
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # GET /customers/1
@@ -56,7 +45,7 @@ class CustomersController < ApplicationController
     redirect_to action: "index"
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # GET /customers/new
@@ -64,14 +53,14 @@ class CustomersController < ApplicationController
     @customer = Customer.new
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # GET /customers/1/edit
   def edit
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # POST /customers
@@ -90,7 +79,7 @@ class CustomersController < ApplicationController
     end
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # PATCH/PUT /customers/1
@@ -107,7 +96,7 @@ class CustomersController < ApplicationController
     end
 
     # ask shopify to render like native liquid page
-    # render content_type: 'application/liquid'
+    render content_type: 'application/liquid'
   end
 
   # DELETE /customers/1

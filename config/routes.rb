@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  # ajax post
   post '/userinfo' => 'customers#userinfo'
+
+  #post '/index' => 'customers#index'
 
   resources :customers
 

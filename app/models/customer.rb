@@ -1,16 +1,17 @@
 class Customer < ActiveRecord::Base
 	# paperclip upload setting
 	has_attached_file :avatar,
-	                :styles => { :medium => "300x300>", :thumb => "100x100>" },
-									:storage => :s3,
-									:default_url => "default.png",
-									:path => "profilecustom/:id/:style/:filename",
-									:bucket => ENV['AWS_BUCKET'],
-									:s3_host_name => "s3-ap-southeast-1.amazonaws.com",
-	                :s3_credentials => {
-	                  :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-	                  :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-	            	  }
+	                :styles => { :medium => "300x300>", :thumb => "100x100>" }
+									# ,
+									# :storage => :s3,
+									# :default_url => "default.png",
+									# :path => "profilecustom/:id/:style/:filename",
+									# :bucket => ENV['AWS_BUCKET'],
+									# :s3_host_name => "s3-ap-southeast-1.amazonaws.com",
+	                # :s3_credentials => {
+	                #   :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+	                #   :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+	            	  # }
 
 
 	validates_attachment  :avatar,
