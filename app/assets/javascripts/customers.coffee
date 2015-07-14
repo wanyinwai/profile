@@ -41,8 +41,9 @@
   customer_id = customer_id_html
 
   # url: 'http://customer-profile.herokuapp.com/userinfo'
+  # 'https://localhost:3001/userinfo'
   $.ajax
-    url: 'https://localhost:3001/userinfo'
+    url: 'http://customer-profile.herokuapp.com/userinfo'
     type: 'POST'
     data: 'customer_email='+customer_email+'&customer_id='+customer_id
     headers: {
