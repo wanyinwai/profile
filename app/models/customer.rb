@@ -3,6 +3,7 @@ class Customer < ActiveRecord::Base
 	has_attached_file :avatar,
 	                :styles => { :medium => "300x300>", :thumb => "100x100>" },
 									:storage => :s3,
+									:default_url => "profilecustom/image/default.png",
 									:path => "profilecustom/:id/:style/:filename",
 									:bucket => ENV['AWS_BUCKET'],
 									:s3_host_name => "s3-ap-southeast-1.amazonaws.com",
@@ -11,7 +12,7 @@ class Customer < ActiveRecord::Base
 	                  :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
 	            	  }
 
-	                #:default_url => "/images/:style/missing.png"
+
 
 	validates_attachment  :avatar,
 	                    :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] },
